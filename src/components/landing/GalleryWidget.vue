@@ -5,82 +5,187 @@ const projects = ref([
     {
         before: new URL('@/assets/gallery/before-1.jpg', import.meta.url).href,
         after: new URL('@/assets/gallery/after-1.jpg', import.meta.url).href,
-        alt: 'Living Room Transformation'
+        title: 'Kitchen Renovation',
+        category: 'KITCHEN REMODEL',
+        description: 'Full kitchen remodel with custom cabinetry, premium appliances, and thoughtful design that maximizes both form and function.'
     },
     {
         before: new URL('@/assets/gallery/before-2.jpg', import.meta.url).href,
         after: new URL('@/assets/gallery/after-2.jpg', import.meta.url).href,
-        alt: 'Modern Bathroom Upgrade'
+        title: 'Master Bathroom',
+        category: 'BATHROOM RENOVATION',
+        description: 'Luxury master bathroom featuring spa-like amenities, custom vanity, and premium finishes throughout.'
     },
     {
         before: new URL('@/assets/gallery/before-3.jpg', import.meta.url).href,
         after: new URL('@/assets/gallery/after-3.jpg', import.meta.url).href,
-        alt: 'Kitchen Renovation'
+        title: 'Living Room Transformation',
+        category: 'RESIDENTIAL REMODEL',
+        description: 'Complete living space modernization with custom millwork, lighting design, and contemporary finishes.'
     }
 ]);
 
-const sliderValue = ref(Array(projects.value.length).fill(50));
-
 // For lightbox
 const showLightbox = ref(false);
-const selectedIndex = ref(0);
-const lightboxSlider = ref(50);
+const selectedProject = ref(null);
 
-function openLightbox(idx) {
-    selectedIndex.value = idx;
-    lightboxSlider.value = sliderValue.value[idx];
+function openLightbox(project) {
+    selectedProject.value = project;
     showLightbox.value = true;
 }
+
 function closeLightbox() {
     showLightbox.value = false;
+}
+
+function smoothScroll(id) {
+    const element = document.getElementById(id);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 }
 </script>
 
 <template>
-    <section id="gallery" class="max-w-6xl mx-auto">
-        <h2 class="text-3xl md:text-4xl font-bold text-[#EDA220] text-center mb-10">Our Work Gallery</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            <div v-for="(project, idx) in projects" :key="idx" class="overflow-hidden rounded-lg shadow-lg bg-white p-2 cursor-pointer" @click="openLightbox(idx)">
-                <div class="relative w-full h-48 select-none">
-                    <!-- After Image (full, always visible) -->
-                    <img :src="project.after" :alt="project.alt + ' after'" class="absolute inset-0 w-full h-full object-cover rounded-lg" draggable="false" />
-                    <!-- Before Image (clipped horizontally, same size as after) -->
-                    <div class="absolute inset-0 h-full" :style="{ width: sliderValue[idx] + '%' }" style="overflow: hidden; pointer-events: none">
-                        <img :src="project.before" :alt="project.alt + ' before'" class="w-full h-full object-cover rounded-lg" draggable="false" />
+    <section id="gallery" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="grid lg:grid-cols-2 gap-20 items-start mb-24">
+                <div>
+                    <h2 class="text-5xl md:text-6xl font-light text-white mb-6 tracking-tight leading-tight">
+                        What We
+                        <span class="block text-[#EDA220] font-normal">Build.</span>
+                    </h2>
+                    <p class="text-xl text-gray-300 font-light leading-relaxed mb-8">
+                        We provide our clients with years of experience of work with premium materials, traditional craftsmanship and the most refined finishes which set the standard for superior quality and an exceptional result.
+                    </p>
+
+                    <!-- Services List -->
+                    <div class="space-y-3 mb-8">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-2 h-2 bg-[#EDA220]"></div>
+                            <span class="text-gray-300 font-light tracking-wide">LUXURY RESIDENCES</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-2 h-2 bg-[#EDA220]"></div>
+                            <span class="text-gray-300 font-light tracking-wide">KITCHEN & BATHROOM</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-2 h-2 bg-[#EDA220]"></div>
+                            <span class="text-gray-300 font-light tracking-wide">WHOLE HOME RENOVATION</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-2 h-2 bg-[#EDA220]"></div>
+                            <span class="text-gray-300 font-light tracking-wide">CUSTOM CONSTRUCTION</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-2 h-2 bg-[#EDA220]"></div>
+                            <span class="text-gray-300 font-light tracking-wide">EXTERIOR IMPROVEMENTS</span>
+                        </div>
                     </div>
-                    <!-- Divider line -->
-                    <div class="absolute top-0 bottom-0" :style="{ left: `calc(${sliderValue[idx]}% - 1px)` }" style="width: 2px; background: #eda220; z-index: 1; pointer-events: none"></div>
-                    <!-- Labels -->
-                    <span class="absolute left-2 top-2 bg-white/80 text-xs px-2 py-1 rounded font-semibold text-gray-700 shadow">Before</span>
-                    <span class="absolute right-2 top-2 bg-white/80 text-xs px-2 py-1 rounded font-semibold text-gray-700 shadow">After</span>
-                    <!-- Slider handle (stop click from bubbling up to open lightbox) -->
-                    <input type="range" min="0" max="100" v-model="sliderValue[idx]" class="absolute bottom-2 left-1/2 -translate-x-1/2 w-11/12 accent-[#EDA220]" style="z-index: 2" @click.stop />
+
+                    <button @click="smoothScroll('contact')" class="border border-white text-white px-8 py-3 font-light tracking-wider hover:bg-white hover:text-[#2a2a2a] transition-all duration-300">SERVICES</button>
                 </div>
-                <div class="mt-3 text-center text-gray-700 font-medium">{{ project.alt }}</div>
+
+                <!-- Featured Project - Stacked Images -->
+                <div>
+                    <div class="space-y-6">
+                        <!-- Before Image -->
+                        <div class="group cursor-pointer" @click="openLightbox(projects[0])">
+                            <div class="relative aspect-[4/3] overflow-hidden">
+                                <img :src="projects[0].before" :alt="projects[0].title + ' before'" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300"></div>
+                                <div class="absolute top-4 left-4 bg-white/90 text-gray-900 text-xs px-3 py-1 font-medium tracking-wider">BEFORE</div>
+                            </div>
+                        </div>
+
+                        <!-- After Image -->
+                        <div class="group cursor-pointer" @click="openLightbox(projects[0])">
+                            <div class="relative aspect-[4/3] overflow-hidden">
+                                <img :src="projects[0].after" :alt="projects[0].title + ' after'" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                                <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300"></div>
+                                <div class="absolute top-4 left-4 bg-[#EDA220] text-white text-xs px-3 py-1 font-medium tracking-wider">AFTER</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6">
+                        <div class="text-xs text-gray-400 font-medium tracking-wider mb-2">{{ projects[0].category }}</div>
+                        <h3 class="text-2xl text-white font-light mb-3">{{ projects[0].title }}</h3>
+                        <p class="text-gray-400 font-light leading-relaxed">{{ projects[0].description }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional Projects Grid -->
+            <div class="grid md:grid-cols-2 gap-16">
+                <div v-for="(project, idx) in projects.slice(1)" :key="idx + 1" class="space-y-6">
+                    <!-- Before Image -->
+                    <div class="group cursor-pointer" @click="openLightbox(project)">
+                        <div class="relative aspect-[4/3] overflow-hidden">
+                            <img :src="project.before" :alt="project.title + ' before'" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300"></div>
+                            <div class="absolute top-4 left-4 bg-white/90 text-gray-900 text-xs px-3 py-1 font-medium tracking-wider">BEFORE</div>
+                        </div>
+                    </div>
+
+                    <!-- After Image -->
+                    <div class="group cursor-pointer" @click="openLightbox(project)">
+                        <div class="relative aspect-[4/3] overflow-hidden">
+                            <img :src="project.after" :alt="project.title + ' after'" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-300"></div>
+                            <div class="absolute top-4 left-4 bg-[#EDA220] text-white text-xs px-3 py-1 font-medium tracking-wider">AFTER</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <div class="text-xs text-gray-400 font-medium tracking-wider mb-2">{{ project.category }}</div>
+                        <h3 class="text-xl text-white font-light mb-3">{{ project.title }}</h3>
+                        <p class="text-gray-400 font-light text-sm leading-relaxed">{{ project.description }}</p>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- Lightbox Modal -->
-        <div v-if="showLightbox" class="fixed inset-0 z-50 flex items-center justify-center bg-white/55 backdrop-blur-sm transition" @click.self="closeLightbox">
-            <div class="relative">
-                <button @click="closeLightbox" class="absolute -top-4 -left-4 bg-white rounded-full shadow p-2 text-2xl text-gray-700 hover:text-[#EDA220] font-bold focus:outline-none z-10" aria-label="Close" style="line-height: 1">&times;</button>
-                <div class="relative w-[80vw] max-w-3xl h-[60vh] min-h-[300px] select-none bg-white rounded-xl shadow-2xl border border-gray-200 flex items-center justify-center">
-                    <!-- After Image (full, always visible) -->
-                    <img :src="projects[selectedIndex].after" :alt="projects[selectedIndex].alt + ' after'" class="absolute inset-0 w-full h-full object-cover rounded-xl" draggable="false" />
-                    <!-- Before Image (clipped horizontally, same size as after) -->
-                    <div class="absolute inset-0 h-full" :style="{ width: lightboxSlider + '%' }" style="overflow: hidden; pointer-events: none">
-                        <img :src="projects[selectedIndex].before" :alt="projects[selectedIndex].alt + ' before'" class="w-full h-full object-cover rounded-xl" draggable="false" />
+        <div v-if="showLightbox && selectedProject" class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm p-4" @click.self="closeLightbox">
+            <div class="relative max-w-6xl w-full bg-white overflow-hidden">
+                <!-- Close Button -->
+                <button @click="closeLightbox" class="absolute top-4 right-4 bg-black/80 hover:bg-black text-white w-12 h-12 flex items-center justify-center font-bold z-20 transition-colors duration-300" aria-label="Close">×</button>
+
+                <!-- Stacked Images in Lightbox -->
+                <div class="grid md:grid-cols-2 gap-4 p-8">
+                    <!-- Before -->
+                    <div>
+                        <div class="relative aspect-[4/3] overflow-hidden mb-4">
+                            <img :src="selectedProject.before" :alt="selectedProject.title + ' before'" class="w-full h-full object-cover" />
+                            <div class="absolute top-4 left-4 bg-white text-gray-900 text-sm px-4 py-2 font-medium tracking-wider">BEFORE</div>
+                        </div>
                     </div>
-                    <!-- Divider line -->
-                    <div class="absolute top-0 bottom-0" :style="{ left: `calc(${lightboxSlider}% - 1px)` }" style="width: 2px; background: #eda220; z-index: 1; pointer-events: none"></div>
-                    <!-- Labels -->
-                    <span class="absolute left-4 top-4 bg-white/80 text-sm px-3 py-1 rounded font-semibold text-gray-700 shadow">Before</span>
-                    <span class="absolute right-4 top-4 bg-white/80 text-sm px-3 py-1 rounded font-semibold text-gray-700 shadow">After</span>
-                    <!-- Slider handle -->
-                    <input type="range" min="0" max="100" v-model="lightboxSlider" class="absolute bottom-4 left-1/2 -translate-x-1/2 w-11/12 accent-[#EDA220]" style="z-index: 2" @click.stop />
+
+                    <!-- After -->
+                    <div>
+                        <div class="relative aspect-[4/3] overflow-hidden mb-4">
+                            <img :src="selectedProject.after" :alt="selectedProject.title + ' after'" class="w-full h-full object-cover" />
+                            <div class="absolute top-4 left-4 bg-[#EDA220] text-white text-sm px-4 py-2 font-medium tracking-wider">AFTER</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="mt-6 text-center text-gray-700 font-medium text-lg">{{ projects[selectedIndex].alt }}</div>
+
+                <!-- Project Details -->
+                <div class="px-8 pb-8">
+                    <div class="text-xs text-gray-500 font-medium tracking-wider mb-2">{{ selectedProject.category }}</div>
+                    <h3 class="text-3xl font-light text-gray-900 mb-4">{{ selectedProject.title }}</h3>
+                    <p class="text-gray-600 font-light leading-relaxed text-lg">{{ selectedProject.description }}</p>
+                </div>
             </div>
         </div>
     </section>
 </template>
+
+<style scoped>
+/* Ensure smooth hover transitions */
+.group img {
+    will-change: transform;
+}
+</style>
