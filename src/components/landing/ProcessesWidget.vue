@@ -68,7 +68,7 @@ function isStepActive(step) {
 </script>
 
 <template>
-    <section id="process" class="py-24 px-6">
+    <section id="process">
         <div class="max-w-6xl mx-auto">
             <!-- Section Header -->
             <div class="text-center mb-20">

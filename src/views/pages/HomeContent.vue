@@ -113,7 +113,7 @@ function scrollToTop() {
         </section>
 
         <!-- PROCESS SECTION -->
-        <section
+        <!-- <section
             id="process"
             class="py-16 px-6 md:px-16 lg:px-32 transition-all duration-1000 ease-out delay-300"
             :class="{
@@ -122,7 +122,7 @@ function scrollToTop() {
             }"
         >
             <ProcessesWidget />
-        </section>
+        </section> -->
 
         <!-- GALLERY SECTION -->
         <section
@@ -136,18 +136,6 @@ function scrollToTop() {
             <GalleryWidget />
         </section>
 
-        <!-- TESTIMONIALS SECTION -->
-        <section
-            id="testimonials"
-            class="py-16 px-6 md:px-16 lg:px-32 transition-all duration-1000 ease-out delay-200"
-            :class="{
-                'opacity-100 translate-y-0': isVisible('testimonials'),
-                'opacity-0 translate-y-12': !isVisible('testimonials')
-            }"
-        >
-            <TestimonialsWidget />
-        </section>
-
         <!-- PROJECT MAP SECTION -->
         <section
             id="completed-jobs-map"
@@ -158,6 +146,18 @@ function scrollToTop() {
             }"
         >
             <ProjectMapWidget />
+        </section>
+
+        <!-- TESTIMONIALS SECTION -->
+        <section
+            id="testimonials"
+            class="py-16 px-6 md:px-16 lg:px-32 transition-all duration-1000 ease-out delay-200"
+            :class="{
+                'opacity-100 translate-y-0': isVisible('testimonials'),
+                'opacity-0 translate-y-12': !isVisible('testimonials')
+            }"
+        >
+            <TestimonialsWidget />
         </section>
 
         <!-- CONTACT SECTION -->

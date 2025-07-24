@@ -75,7 +75,7 @@ onUnmounted(() => clearInterval(timer));
 </script>
 
 <template>
-    <section id="testimonials" class="py-24 px-6 md:px-16 lg:px-32 bg-[#2a2a2a] text-white overflow-hidden">
+    <section id="testimonials" class="bg-[#2a2a2a] text-white overflow-hidden">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold mb-3 text-[#EDA220] tracking-tight">What Our Clients Say</h2>

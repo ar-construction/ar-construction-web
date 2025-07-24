@@ -1,13 +1,15 @@
 <template>
-    <section id="services" class="py-24 px-6">
-        <div class="max-w-6xl mx-auto">
+    <section id="services" class="pt-16">
+        <div class="mx-auto">
             <!-- Section Header -->
             <div class="text-center mb-20">
                 <h2 class="text-5xl md:text-6xl font-light text-white mb-6 tracking-tight">
                     What We
                     <span class="text-[#EDA220] font-normal">Do.</span>
                 </h2>
-                <p class="text-xl text-gray-300 font-light max-w-3xl mx-auto leading-relaxed">From new construction to complete renovations, we bring decades of expertise to every project.</p>
+                <p class="text-xl text-gray-300 font-light max-w-3xl mx-auto leading-relaxed">
+                    From custom remodels to new construction, we deliver consistent, high-quality results - backed by systems, skilled crews, and a commitment to doing things right.
+                </p>
             </div>
 
             <!-- Services Grid -->

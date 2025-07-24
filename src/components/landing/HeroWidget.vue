@@ -58,15 +58,18 @@ function setImage(index) {
             <!-- Hero headline -->
             <div class="text-center mb-16 space-y-4">
                 <h1 class="text-6xl md:text-8xl font-light text-white tracking-tight leading-none mb-8 drop-shadow-lg">
-                    Building
-                    <span class="block text-[#EDA220] font-normal drop-shadow-lg">Rock Solid</span>
-                    <span class="block font-light drop-shadow-lg">Relationships.</span>
+                    Where
+                    <span class="block text-[#EDA220] font-normal drop-shadow-lg">Craftmanship</span>
+                    <span class="block font-light drop-shadow-lg">Meets</span>
+                    <span class="block text-[#EDA220] font-normal drop-shadow-lg">Accountability</span>
                 </h1>
             </div>
 
             <!-- Description -->
             <div class="text-center mb-16 max-w-3xl">
-                <p class="text-xl md:text-2xl text-white font-light leading-relaxed drop-shadow-md">Residential construction and remodeling contractor serving clients with reliability, craftsmanship, and transparency since our founding.</p>
+                <p class="text-xl md:text-2xl text-white font-light leading-relaxed drop-shadow-md">
+                    We’re here to raise the standard in residential construction - delivering dependable work, transparent service, and long-term value for clients and crew alike.
+                </p>
             </div>
 
             <!-- CTA buttons -->
@@ -87,12 +90,12 @@ function setImage(index) {
             </div>
 
             <!-- Tagline -->
-            <div class="text-center mb-8">
+            <!-- <div class="text-center mb-8">
                 <p class="text-sm text-white/80 font-light tracking-wider uppercase drop-shadow">
                     We do good for good people,<br />
                     with good people
                 </p>
-            </div>
+            </div> -->
 
             <!-- Scroll indicator (now just below the text) -->
             <div class="mx-auto mt-4 flex items-center justify-center cursor-pointer z-20" @click="smoothScroll('about')" aria-label="Scroll to About">

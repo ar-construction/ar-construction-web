@@ -58,14 +58,13 @@ onUnmounted(() => {
 });
 </script>
 <template>
-    <section id="about" class="py-24 px-6">
+    <section id="about" class="pt-16">
         <div class="max-w-6xl mx-auto">
             <!-- Main About Section -->
             <div class="mb-32">
-                <div class="text-center mb-20">
+                <div class="text-center mb-10">
                     <h2 class="text-5xl md:text-6xl font-light text-white mb-6 tracking-tight">
-                        Started From
-                        <span class="block text-[#EDA220] font-normal">Humble Beginnings.</span>
+                        <span class="block text-[#EDA220] font-normal">We do good for good people, with good people</span>
                     </h2>
                     <p class="text-xl text-gray-300 font-light max-w-3xl mx-auto leading-relaxed">Founded with a vision to raise the standard in residential contracting, we exist to serve both the client and the crew.</p>
                 </div>
@@ -100,25 +99,6 @@ onUnmounted(() => {
                     </div>
                 </div>
             </div>
-
-            <!-- Mission Statement -->
-            <div class="text-center mb-32">
-                <div class="max-w-5xl mx-auto">
-                    <h3 class="text-3xl md:text-4xl font-light text-white mb-8 tracking-tight leading-relaxed">
-                        We would rather build one hundred projects for one customer
-                        <span class="block text-[#EDA220] font-normal mt-2"> than one project for one hundred customers. </span>
-                    </h3>
-                </div>
-            </div>
-
-            <!-- Projects Completed Counter -->
-            <div class="text-center mb-32">
-                <div ref="counterElement" class="inline-block border-2 border-[#EDA220] px-16 py-12 bg-white/5">
-                    <div class="text-6xl md:text-7xl font-light text-[#EDA220] mb-4">{{ displayCount }}+</div>
-                    <div class="text-xl text-white font-light tracking-wider">PROJECTS COMPLETED</div>
-                </div>
-            </div>
-
             <!-- Values Grid -->
             <div class="grid md:grid-cols-3 gap-12">
                 <div class="text-center space-y-4">

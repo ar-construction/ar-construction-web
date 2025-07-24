@@ -23,7 +23,7 @@ const projectIcon = new L.Icon({
 </script>
 
 <template>
-    <section id="service-area" class="py-24 px-6">
+    <section id="service-area">
         <div class="max-w-6xl mx-auto">
             <!-- Section Header -->
             <div class="text-center mb-16">
