@@ -28,7 +28,7 @@ function smoothScroll(id) {
 
 <template>
     <nav class="fixed top-0 left-0 right-0 z-50 bg-[#2a2a2a]/95 backdrop-blur-sm border-b border-[#333]">
-        <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-7xl mx-auto px-6 pb-2">
             <div class="flex items-center justify-between h-20">
                 <!-- Logo (left) -->
                 <div class="flex-shrink-0 mr-auto">

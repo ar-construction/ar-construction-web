@@ -64,7 +64,12 @@ onUnmounted(() => {
             <div class="mb-32">
                 <div class="text-center mb-10">
                     <h2 class="text-5xl md:text-6xl font-light text-white mb-6 tracking-tight">
-                        <span class="block text-[#EDA220] font-normal">We do good for good people, with good people</span>
+                        <span class="font-normal">We Do </span>
+                        <span class="text-[#EDA220] font-normal">Good </span>
+                        <span class="font-normal">For </span>
+                        <span class="text-[#EDA220] font-normal">Good People</span>
+                        <span class="font-normal">, With </span>
+                        <span class="text-[#EDA220] font-normal">Good People </span>
                     </h2>
                     <p class="text-xl text-gray-300 font-light max-w-3xl mx-auto leading-relaxed">Founded with a vision to raise the standard in residential contracting, we exist to serve both the client and the crew.</p>
                 </div>

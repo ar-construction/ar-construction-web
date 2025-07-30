@@ -1,5 +1,5 @@
 <template>
-    <section id="services" class="pt-16">
+    <section id="services" class="pt-12">
         <div class="mx-auto">
             <!-- Section Header -->
             <div class="text-center mb-20">

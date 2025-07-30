@@ -15,7 +15,7 @@ const isSubmitting = ref(false);
 const submitStatus = ref(''); // 'success', 'error', or ''
 const errorMessage = ref('');
 
-// Google Form URL
+// Google Form URL - use the direct formResponse endpoint
 const GOOGLE_FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSemD0YjubEkWb4W0GLSAaraAMHHtEWMHRJcgHZ14HXgFwV3Mw/formResponse';
 
 // Google Form field IDs
@@ -115,7 +115,7 @@ function clearStatus() {
 </script>
 
 <template>
-    <section class="py-24 px-6">
+    <section class="py-12 px-6">
         <div class="max-w-6xl mx-auto">
             <!-- Section Header -->
             <div class="text-center mb-20">
@@ -157,6 +157,8 @@ function clearStatus() {
 
                 <!-- Contact Form -->
                 <div class="bg-white/5 backdrop-blur-sm border border-white/10 p-10">
+                    <h3 class="text-2xl font-light text-white mb-8 text-center">Start Your Project</h3>
+
                     <!-- Success Message -->
                     <div v-if="submitStatus === 'success'" class="mb-6 p-4 bg-green-600/20 border border-green-600/30 text-green-300 text-center">
                         <div class="flex items-center justify-center space-x-2">
@@ -251,6 +253,15 @@ function clearStatus() {
                         </button>
                     </form>
                 </div>
+            </div>
+
+            <!-- Additional CTA -->
+            <div class="text-center mt-20 border-t border-white/10 pt-16">
+                <p class="text-gray-300 font-light mb-6">
+                    Prefer to talk? Give us a call at
+                    <a href="tel:5551234567" class="text-[#EDA220] hover:text-white transition-colors">(555) 123-4567</a>
+                </p>
+                <p class="text-sm text-gray-400">Most project consultations can be scheduled within 48 hours.</p>
             </div>
         </div>
     </section>

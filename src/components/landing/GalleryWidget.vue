@@ -51,7 +51,7 @@ function smoothScroll(id) {
 </script>
 
 <template>
-    <section id="gallery" class="py-24 px-6">
+    <section id="gallery" class="py-12 px-6">
         <div class="max-w-7xl mx-auto">
             <!-- Section Header -->
             <div class="grid lg:grid-cols-2 gap-20 items-start mb-24">
@@ -106,8 +106,8 @@ function smoothScroll(id) {
                         <div class="absolute top-0 bottom-0 w-px bg-white shadow-lg z-20 opacity-80" :style="{ left: sliderValues[0] + '%' }"></div>
 
                         <!-- Clean labels -->
-                        <div class="absolute top-6 left-6 text-white text-sm font-medium tracking-wider opacity-90">BEFORE</div>
-                        <div class="absolute top-6 right-6 text-white text-sm font-medium tracking-wider opacity-90">AFTER</div>
+                        <div class="absolute top-6 left-6 text-[#EDA220] text-sm font-medium tracking-wider">BEFORE</div>
+                        <div class="absolute top-6 right-6 text-[#EDA220] text-sm font-medium tracking-wider">AFTER</div>
 
                         <!-- Ultra-minimal slider -->
                         <div class="absolute bottom-6 left-6 right-6">
@@ -133,8 +133,8 @@ function smoothScroll(id) {
                         <div class="absolute top-0 bottom-0 w-px bg-white shadow-lg z-20 opacity-80" :style="{ left: sliderValues[idx + 1] + '%' }"></div>
 
                         <!-- Clean labels -->
-                        <div class="absolute top-4 left-4 text-white text-xs font-medium tracking-wider opacity-90">BEFORE</div>
-                        <div class="absolute top-4 right-4 text-white text-xs font-medium tracking-wider opacity-90">AFTER</div>
+                        <div class="absolute top-4 left-4 text-[#EDA220] text-xs font-medium tracking-wider">BEFORE</div>
+                        <div class="absolute top-4 right-4 text-[#EDA220] text-xs font-medium tracking-wider">AFTER</div>
 
                         <!-- Ultra-minimal slider -->
                         <div class="absolute bottom-4 left-4 right-4">
@@ -167,8 +167,8 @@ function smoothScroll(id) {
                     <div class="absolute top-0 bottom-0 w-0.5 bg-white shadow-2xl z-20" :style="{ left: lightboxSlider + '%' }"></div>
 
                     <!-- Labels -->
-                    <div class="absolute top-8 left-8 text-white text-lg font-medium tracking-wider bg-black/30 px-4 py-2 backdrop-blur-sm">BEFORE</div>
-                    <div class="absolute top-8 right-20 text-white text-lg font-medium tracking-wider bg-black/30 px-4 py-2 backdrop-blur-sm">AFTER</div>
+                    <div class="absolute top-8 left-8 text-[#EDA220] text-lg font-medium tracking-wider bg-black/30 px-4 py-2 backdrop-blur-sm">BEFORE</div>
+                    <div class="absolute top-8 right-20 text-[#EDA220] text-lg font-medium tracking-wider bg-black/30 px-4 py-2 backdrop-blur-sm">AFTER</div>
 
                     <!-- Lightbox slider -->
                     <div class="absolute bottom-8 left-8 right-8">
