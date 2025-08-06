@@ -5,7 +5,7 @@ const reviews = [
     {
         name: 'Sarah M.',
         avatar: 'https://randomuser.me/api/portraits/women/65.jpg',
-        text: 'A&R Construction exceeded our expectations! The team was professional, on time, and the results are stunning. Highly recommend!'
+        text: 'Wow! Great company! 5 stars!'
     },
     {
         name: 'James R.',
